@@ -1,0 +1,25 @@
+<a routerLink="/create-new-task" class="btn btn-primary" role="button">Create New Task</a>
+<div class="row">
+    <div class="col-xs-8">
+        <hr>
+        <h3>Tasks Assigned:</h3>
+        <hr>
+        <input type="text" class="form-control" placeholder="Search by Title" [(ngModel)]="searchText" (input)="getfilteredTasks()">
+        <br>
+        <ul class="list-group" *ngFor="let task of filteredTasksList">
+            <div style="display: flex; align-items: center;">
+              <a [routerLink]="['/detail', task.title]"
+                 class="list-group-item"
+                 [style.backgroundColor]="getCategoryColor(task.priority)"
+                 style="color: #000; flex: 1;">
+                <div>
+                  {{task.title}} ({{task.description}})
+                  <br>Due By: {{task.dueDate}}
+                </div>
+              </a>
+              <button class="btn btn-sm  btn-danger" (click)="deleteTask(task)">Delete</button>
+            </div>
+            <br>
+          </ul>
+    </div>
+</div>
