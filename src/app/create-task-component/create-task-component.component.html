@@ -3,29 +3,28 @@
     <form #taskForm="ngForm" (ngSubmit)="createTask(taskForm)">
         <div class="mb-3">
             <label for="title" class="form-label">Title<span class="text-danger">*</span></label>
-            <input type="text" class="form-control" name="title" id="title" [(ngModel)]="title" required minlength="5">
-            <div *ngIf="taskForm.controls.title.invalid && (taskForm.controls.title.dirty || taskForm.controls.title.touched)"
-                class="text-danger">
+            <input type="text" class="form-control" name="title" id="title" [(ngModel)]="title" required minlength="5"
+                #titleInput="ngModel">
+            <div *ngIf="titleInput.invalid && (titleInput.dirty || titleInput.touched)" class="text-danger">
                 Title must be at least 5 characters long.
             </div>
         </div>
         <br>
         <div class="mb-3">
             <label for="desc" class="form-label">Description<span class="text-danger">*</span></label>
-            <textarea class="form-control" name="description" id="desc" [(ngModel)]="description" required
-                minlength="5"></textarea>
-            <div *ngIf="taskForm.controls.description.invalid && (taskForm.controls.description.dirty || taskForm.controls.description.touched)"
-                class="text-danger">
+            <textarea class="form-control" name="description" id="desc" [(ngModel)]="description" required minlength="5"
+                #descInput="ngModel"></textarea>
+            <div *ngIf="descInput.invalid && (descInput.dirty || descInput.touched)" class="text-danger">
                 Description must be at least 5 characters long.
             </div>
         </div>
         <br>
         <div class="mb-3">
             <label class="form-label">Due Date<span class="text-danger">*</span></label><br>
-            <input type="date" class="form-control" name="dueDate" [(ngModel)]="dueDate" required>
-            <div *ngIf="taskForm.controls.dueDate.invalid && (taskForm.controls.dueDate.dirty || taskForm.controls.dueDate.touched)"
-                class="text-danger">
-                Due Date is required.
+            <input type="date" class="form-control" name="dueDate" [(ngModel)]="dueDate" required
+                #dueDateInput="ngModel">
+            <div *ngIf="dueDateInput.invalid && (dueDateInput.dirty || dueDateInput.touched)" class="text-danger">
+                Description must be at least 5 characters long.
             </div>
         </div>
         <br>

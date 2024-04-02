@@ -29,16 +29,12 @@ export class CreateTaskComponentComponent {
 
 
   getCategoryColor(priority: string): string {
-    console.log('Get Color' + priority + ' ' + typeof (priority))
     switch (priority) {
       case '1':
-        console.log('1')
         return '#FF7373';
       case '2':
-        console.log('2')
         return 'lightblue';
       case '3':
-        console.log('3')
         return 'lightgreen';
     }
   }

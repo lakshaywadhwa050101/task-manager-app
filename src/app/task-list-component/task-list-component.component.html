@@ -14,12 +14,11 @@
                  style="color: #000; flex: 1;">
                 <div>
                   {{task.title}} ({{task.description}})
-                  <br>Due By: {{task.dueDate}}
+                <span class="pull-right">Due By: {{task.dueDate}}</span>
                 </div>
               </a>
-              <button class="btn btn-sm  btn-danger" (click)="deleteTask(task)">Delete</button>
+              &nbsp; <button class="btn btn-sm  btn-danger" (click)="deleteTask(task)">Delete</button>
             </div>
-            <br>
           </ul>
     </div>
 </div>
