@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { CreateTaskComponentComponent } from './create-task-component/create-task-component.component';
 import { RouterModule } from '@angular/router';
-import { DataVisualComponent } from './data-visual/data-visual.component';
 import { ChartModule, LineSeriesService, CategoryService } from '@syncfusion/ej2-angular-charts';
 
 @NgModule({
@@ -19,8 +18,7 @@ import { ChartModule, LineSeriesService, CategoryService } from '@syncfusion/ej2
     HeaderComponent,
     TaskListComponent,
     TaskDetailComponent,
-    CreateTaskComponentComponent,
-    DataVisualComponent
+    CreateTaskComponentComponent 
   ],
   imports: [
     BrowserModule,
